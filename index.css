@@ -1,0 +1,665 @@
+html {
+    scroll-behavior: smooth; 
+}
+#home, #about, #whatido, #resume, #client, #contant {
+    scroll-margin-top: 70px; 
+}
+@import url("https://fonts.googleleapis.com/css2?family=poppins:wght@300;400;500;600;700;800;900;display=swap");
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    line-height: 1.4;
+}
+:root{
+    --mycolor:rgb(32,201,151);
+    --mainpadding:70px;
+    --secionbgcolor:rgb(238 238 241);
+}
+.title{
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.title h2{
+font-size: 6rem;
+margin: 10px auto;
+opacity: 0.2;
+}
+/* this way is improtant becouse when i used flex with child(absoulte) the flex effect affect on it(child) */
+.title h3{
+    position: absolute;
+    font-size: 2rem;
+}
+.title h3::after{
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 0.25rem;
+    background-color: var(--mycolor);
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+body{
+    font-family: "poppins",sans-serif;
+    height: 100%;
+    width: 100%;
+    color: #333;
+}
+img{
+    display: block;
+    width: 100%;
+}
+a{
+    color: inherit;
+}
+.container{
+    margin: auto;
+    padding: 0 1rem;
+    width: 100%;
+}
+.navbar{
+    background-color: #000;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+.navbar #menu{
+    display: none;
+}
+.navbar label{
+    color: white;
+    margin-left: auto;
+    display: none;
+}
+.navbar .container{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.navbar .container .ul-nav{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+gap: 1rem;
+margin: auto;
+color: white;
+}
+.landing{
+height: 100vh;
+background-size: 100% 100%;
+}
+.landing .layer{
+    background-color: rgba(0, 0, 0, 0.382);
+    color: white;
+}
+.landing .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.landing .container .text{
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+}
+.landing .container a{
+    display: inline-block;
+    margin: 20px 0;
+    border: 2px solid var(--mycolor);
+    border-radius: 30px;
+    padding: 10px 20px;
+    transition-duration: 0.5s;
+    transition-property: background-color;
+    transition-property: color;
+}
+.landing .container a:hover{
+    background-color: var(--mycolor);
+    color: white;
+}
+.landing .container .down{
+    position: relative;
+    animation: move 2s infinite linear;
+}
+@keyframes move {
+    0%{
+        bottom: 20px;
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        bottom: 0;
+    }
+}
+.about{
+    padding: 20px;
+}
+.about .aboutarea{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 30px;
+}
+.about .aboutarea .abouttext{
+    width: calc(70% - 30px);
+}
+.about .aboutarea .aboutinfo{
+    width: 30%;
+}
+.about .aboutarea .abouttext p{
+    padding: 10px;
+}
+.about .aboutarea .abouttext h3 span{
+    color: var(--mycolor);
+}
+.about .aboutarea .aboutinfo ul li{
+    padding: 6px 0;
+}
+.about .aboutarea .aboutinfo ul li span{
+    font-weight: bold;
+}
+.about .aboutarea .aboutinfo ul li:not(:last-child){
+    border-bottom: 1px dashed rgba(170,170,170,0.51);
+}
+.about .aboutarea .aboutinfo a{
+    margin-top: 20px;
+    border-radius: 30px;
+    padding: 17px;
+    display: inline-block;
+    background-color: var(--mycolor);
+    color: white;
+    transition-duration: 0.5s;
+}
+.about .aboutarea .aboutinfo a:hover{
+    background-color:rgb(3, 36, 25);
+}
+.about .counter{
+    margin-top: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    row-gap: 30px;
+}
+.about .counter .item:not(:last-child){
+    border-right: 1px dashed rgba(2, 2, 2, 0.51);
+}
+.about .counter .item{
+    padding: 20px 30px;
+    font-size: 1.25rem;
+    opacity: 0.3;
+    width: calc((100% - 30px) / 4);
+}
+.services{
+    padding: var(--mainpadding) 0;
+    background-color:var(--secionbgcolor) ;
+}
+.services .services-area{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 30px;
+}
+.services .services-area .item{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    width: calc((100% - 30px)/2);
+}
+.services .services-area .item span{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 9px 2px rgb(0 0 0 / 50%);
+    color: var(--mycolor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 60px;
+    flex-shrink: 0;
+}
+.services .services-area .item p{
+    width: 70%;
+}
+.resume{
+    padding-block: var(--mainpadding);
+}
+.resume .resumearea{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 30px;
+}
+.resume .resumearea .item{
+    width: calc((100% - 30px)/2);
+    border:1px solid rgba(170,170,170,0.51);
+    padding:10px;
+    border-radius: 10px;
+}
+.resume .resumearea .item span{
+    border-radius: inherit;
+    background-color: var(--mycolor);
+    color:white;
+    font-size: 1rem;
+    display: inline-block;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+.resume .resumearea .item .text-edu{
+    padding-block:15px;
+    color: tomato;
+    font-size: 14px;
+}
+.resume .skills h3{
+    padding-block: 20px;
+}
+.resume .skills .skillarea{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 30px;
+}
+.resume .skills .skillarea .item{
+    width: calc((100% - 30px)/2);
+}
+.resume .skills .skillarea .item .text{
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.resume .skills .skillarea .progress{
+    height: 7px;
+    border-radius: 50px;
+    background-color: gray;
+    overflow: hidden;
+}
+.resume .skills .skillarea .progress .innerprogress{
+    background-color: var(--mycolor);
+    height: inherit;
+}
+.resume a{
+    margin-top: 20px;
+    border-radius: 30px;
+    padding: 17px;
+    display: block;
+    background-color: rgb(170, 159, 159);
+    color: white;
+    transition-duration: 0.5s;
+    margin-inline: auto;
+    width: fit-content;
+}
+.resume a:hover{
+    background-color: #000;
+}
+.portfolio{
+    padding-block: var(--mainpadding);
+    background-color: var(--secionbgcolor);
+}
+.portfolio .nav{
+    display: flex;
+    justify-content: center;
+    gap:20px;
+    margin-bottom: 50px;
+}
+.portfolio .nav a.active{
+    position: relative;
+    color:var(--mycolor);
+}
+.portfolio .nav a.active::before{
+    content:'';
+    position: absolute;
+    top:100%;
+    left: 50%;
+    transform: translateX(-50%);
+    height:1px;
+    border-radius: 1px;
+    width: calc(100% + 20px);
+    background-color: var(--mycolor);
+}
+.portfolio .gallery{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 30px;
+}
+.portfolio .gallery .col{
+    width: calc((100% - 30px)/3);
+}
+.portfolio .gallery .col .item{
+    overflow: hidden;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    
+}
+.portfolio .gallery .col .item .image{
+    position: relative;
+}
+.portfolio .gallery .col .item .image .layer{
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    opacity: 0;
+    transition-duration: 0.5s;
+}
+.portfolio .gallery .col .item .image:hover .layer{
+    opacity: 1;
+}
+.portfolio .gallery .col .item .image img{
+    transition-duration: 0.5s;
+    transition-delay: 0.5s;
+}
+.portfolio .gallery .col .item .image:hover img{
+    filter: blur(5px);
+    transform: scale(1.2);
+}
+.client{
+    padding-block: var(--mainpadding);
+}
+.client .clientarea{
+    display: flex;
+    justify-content: space-between;
+    row-gap: 30px;
+    flex-wrap: wrap;
+}
+.client .clientarea .clientchild{
+    width: calc((100% - 30px) / 2);
+    background-color: rgb(248 249 250);
+    padding: 20px;
+    border-radius: 10px;
+}
+.client .clientarea .clientchild .clientinfo{
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    padding-block: 10px;
+    margin-bottom: 10px;
+}
+.client .clientarea .clientchild .clientinfo .clientimage{
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 5px;
+}
+.client .clientarea .ulclient{
+    display: flex;
+    gap:10px;
+    color:gold;
+}
+.client .clientarea .bults{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.client .clientarea .bults span{
+    width: 20px;
+    height: 20px;
+    background-color: gray;
+    border-radius: 50%;
+}
+.client .clientarea .bults span.active{
+    background-color: var(--mycolor);
+    outline: 1px solid var(--mycolor);
+    outline-offset: 5px;
+}
+
+
+
+
+
+@media (max-width:991.98px){
+    .about .aboutarea .abouttext,
+    .about .aboutarea .aboutinfo,
+    .services .services-area .item,
+    .resume .resumearea .item,
+    .resume .skills .skillarea .item,
+    .client .clientarea .clientchild{
+        width: 100%;
+    }
+    .portfolio .gallery .col{
+        width: calc((100% - 30px)/2);
+    }
+
+}
+@media  (max-width:767.98px) {
+    .navbar .container .ul-nav{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        flex-direction: column;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+    .navbar .container .ul-nav a{
+        display: block;
+        padding-block: 10px;
+        margin-block: 10px;
+        background-color: #333;
+    }
+    .navbar label{
+        display: block;
+    }
+    .navbar #menu:checked ~ .ul-nav{
+        max-height: 100vh;
+    }
+    .title h2{
+        font-size: 4rem;
+    }
+    .title h3{
+        font-size: 1.5rem;
+    }
+    .about .counter .item{
+        width: calc((100% - 30px) / 2);
+    }
+}
+@media  (max-width:575.98px) {
+    .title h2{
+        font-size: 3rem;
+    }
+    .title h3{
+        font-size: 1rem;
+    } 
+    .about .counter .item{
+        width: 100%;
+    }
+    .services .services-area .item{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .services .services-area .item p{
+        width: unset;
+    }
+    .portfolio .gallery .col{
+        width: 100%;
+    }
+}
+@media screen and (min-width:576px) {
+    .container{
+        width: 540px;
+    }
+}
+@media screen and (min-width:768px) {
+    .container{
+        width: 720px;
+    }
+}
+@media screen and (min-width:992) {
+    .container{
+        width: 960px;
+    }
+}
+@media screen and(min-width:1200px) {
+    .container{
+        width: 1140px;
+    }
+}
+@media screen and (min-width:1400px) {
+    .container{
+        width: 1320px;
+    }
+}
+/* typed */
+/* i can use tyed js easer */
+.typed::after{
+    content: '';
+    animation: type 10s infinite;
+    border-right: 1px solid white;
+    padding-right: 5px;
+}
+@keyframes type {
+    0%{
+        content: 'd';
+    }
+    3%{
+        content: 'de';
+    }
+    6%{
+        content: 'dev';
+    }
+    9%{
+        content: 'deve';
+    }
+    12%{
+        content: 'devel';
+    }
+    15%{
+        content: 'develo';
+    }
+    18%{
+        content: 'develop';
+    }
+    21%{
+        content: 'develope';
+    }
+    24%{
+        content: 'developer';
+    }
+    27%{
+        content: 'develope';
+    }
+    30%{
+        content: 'develop';
+    }
+    33%{
+        content: 'develo';
+    }
+    36%{
+        content: 'devel';
+    }
+    39%{
+        content: 'devel';
+    }
+    42%{
+        content: 'deve';
+    }
+    45%{
+        content: 'dev';
+    }
+    48%{
+        content: 'de';
+    }
+    51%{
+        content: 'des';
+    }
+    54%{
+        content: 'desg';
+    }
+    57%{
+        content: 'desgi';
+    }
+    60%{
+        content: 'desgin';
+    }
+    63%{
+        content: 'desgine';
+    }
+    66%{
+        content: 'desginr';
+    }
+    69%{
+        content: 'desgin';
+    }
+    72%{
+        content: 'desgi';
+    }
+    75%{
+        content: 'desg';
+    }
+    78%{
+        content: 'desg';
+    }
+    81%{
+        content: 'des';
+    }
+    84%{
+        content: 'de';
+    }
+    87%{
+        content: 'd';
+    }
+    90%{
+        content: '';
+    }
+    92%{
+        content: 'pro';
+    }
+    95%{
+        content: 'progr';
+    }
+    97%{
+        content: 'program';
+    }
+    100%{
+        content: 'programmer';
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
